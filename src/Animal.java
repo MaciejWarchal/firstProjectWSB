@@ -1,10 +1,10 @@
 public class Animal {
 
-    final String spacies;
-    String name;
+    final private String spacies;
+    final private String name;
     private double weight;
-    int age;
-    boolean isALive;
+    private int age;
+    private boolean isALive;
 
 
 
