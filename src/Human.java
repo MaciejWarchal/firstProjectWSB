@@ -26,6 +26,18 @@ public class Human {
         return salary;
     }
 
+    public void setSalary(double newSalary){
+        if (newSalary<=0){
+            System.out.println("nie mozna przypisac zerowej zaplaty");
+        }else {
+            System.out.println("dane zostały wysłane do systemu księgowego");
+            System.out.println("mozliwosc odebrania aneksu do umowy od pani Hani z kadr");
+            System.out.println("ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
+            this.salary=newSalary;
+        }
+    }
+
+
     @Override
     public String toString() {
         return "Human{" +
