@@ -14,4 +14,16 @@ public class Human {
         this.pet = pet;
         this.car = car;
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", isALive=" + isALive +
+                ", phone='" + phone + '\'' +
+                ", pet=" + pet +
+                ", car=" + car +
+                '}';
+    }
 }
