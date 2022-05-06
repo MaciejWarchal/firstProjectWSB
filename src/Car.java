@@ -14,6 +14,9 @@ public class Car {
         this.color=color;
         this.value=value;
     }
+    public double getCarValue(){
+        return this.value;
+    }
     public String toString(){
         return "Car model is "+model+" producer "+producer+" millage "+millage+" engine volume is "+engineVolume+" end color is "+color;
     }
