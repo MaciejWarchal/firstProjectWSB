@@ -1,19 +1,19 @@
-import device.Car;
+import creatures.Animal;
+import creatures.*;
+import device.*;
 
 public class Run {
     public static void main(String[] args){
 
-        Animal rex= new Animal("cat","rex",1.0, 1, true);
-        Animal reksio= new Animal("reksio",true);
-        Car secondCar= new Car("607","Peugeot",240.455 ,2.2 ,"black" , 8500);
-        Car secondCar1 = new Car("607","Peugeot",240.455,2.2,"black",8500);
-        Human Grzegorz = new Human("Grzegorz","Brzenczyszczykiewicz",true,null, rex, null,5000.1);
-        Grzegorz.setSalary(8000);
-        Grzegorz.setCar(secondCar);
-        System.out.println(Grzegorz.toString());
-        System.out.println(secondCar.equals(secondCar1));
-        System.out.println(secondCar);
-        System.out.println(secondCar1);
+        Pet kotRex= new Pet("cat","rex",1.0, 1, true);
+        Pet piesReksio= new Pet("reksio", true);
+        Phone Nokia3310= new Phone("3310","Nokia",2000 , 011001010, 25);
+        Car confortableCar=new Car("607","Peugeot", 2002, 240000, 2.2, "black",8000);
+        Animal.Human Grzegorz = new Animal.Human("Grzegorz","Brzenczyszczykiewicz",true,null, kotRex, null,5000.1,100000.1);
+        Animal.Human Stefan= new Animal.Human("Stefan","Spalina", true, null, )
+
+
+
 
 
 

@@ -1,26 +1,58 @@
 package device;
+import creatures.*;
 
-public class Car {
+public class Car extends Device {
 
-    private final String model;
-    private  final String producer;
+
     private double millage;
     private double engineVolume;
     private String color;
     private double value;
 
-    public Car(String model,String producer,double millage,double engineVolume,String color,double value){
-        this.model=model;
-        this.producer=producer;
+    public Car(String model,String producer,int yearOfProduction, double millage,double engineVolume,String color,
+               double price ){
+        super(model,producer,yearOfProduction,price);
         this.millage=millage;
         this.engineVolume=engineVolume;
         this.color=color;
         this.value=value;
     }
+
+    @Override
+    public void sell(Human saller, Human buyer, double price) {
+       if (saller.getCar().equals(null)){
+           System.out.println("tranzakcja nie mozliwa");
+       }
+       else {
+           if (buyer.getCash()<price){
+               System.out.println("kupujący nie ma dosc pieniedzy");
+           }
+           else {
+               buyer.setCash(buyer.getCash()-price);
+               saller.setCash(saller.getCash()+price);
+               Car sealledCar= saller.getCar();
+               buyer.setCar(sealledCar);
+               saller.setCar(null);
+               System.out.println("Sprzedający "+saller+" sprzedał samochod "+sealledCar+" osobie "+buyer+" za "+price+ "zl.");
+           }
+       }
+
+    }
+
     public double getCarValue(){
         return this.value;
     }
-    /*public String toString(){
-        return "device.Car model is "+model+" producer "+producer+" millage "+millage+" engine volume is "+engineVolume+" end color is "+color;
-    }*/
+
+    @Override
+    public boolean turnOn(boolean syg) {
+        if (syg==true){
+            System.out.println("włączono urządzenie");
+            return true;}
+        else {
+            System.out.println("wyłączono urządzenie");
+            return false;
+        }
+    }
+
+
 }
