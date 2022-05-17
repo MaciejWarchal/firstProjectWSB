@@ -8,9 +8,9 @@ public class Animal {
 
 
 
-    public Animal(String name,boolean isALive){
+    /*public Animal(String name,boolean isALive){
         this("dog",name,1.0,1,isALive);
-    }
+    }*/
 
     public Animal(String spacies, String name, double weight, int age, boolean isALive) {
         this.spacies = spacies;
