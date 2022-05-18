@@ -35,11 +35,26 @@ public class Human {
         return this.car;
     }
 
+    public Animal getPet() {
+        return pet;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public void setCar(Car car) {
-        if (this.salary > car.getCarValue()) {
+        if (car==null){
+            this.car=null;
+        }
+        else if (this.salary > car.getCarValue()) {
             System.out.println("udalo sie kupic za gotówke");
             this.car = car;
-        } else if (this.salary > 0.0 * car.getCarValue()) {
+        } else if (this.salary > 1/12 * car.getCarValue()) {
             System.out.println("auto kupisz za kredyt");
             this.car = car;
         } else {

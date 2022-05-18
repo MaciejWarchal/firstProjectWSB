@@ -1,5 +1,4 @@
-import creatures.Animal;
-import creatures.*;
+package creatures;
 import device.*;
 
 public class Run {
@@ -7,15 +6,22 @@ public class Run {
 
         Pet kotRex= new Pet("cat","rex",1.0, 1, true);
         Pet piesReksio= new Pet("reksio", true);
+
         Phone Nokia3310= new Phone("3310","Nokia",2000 , 011001010, 25);
+
         Car confortableCar=new Car("607","Peugeot", 2002, 240000, 2.2
                 , "black",8000);
-        Animal.Human Grzegorz = new Animal.Human("Grzegorz","Brzenczyszczykiewicz",true,
-                null, kotRex, confortableCar,5000.1,100000.1);
-        Human Stefan= new Animal.Human("Stefan","Spalina", true, null,null,
-                confortableCar,5000 , 25000);
 
-        confortableCar.sell(Grzegorz, Stefan, 8500);
+
+        Human Grzegorz = new Human("Grzegorz","Brzenczyszczykiewicz",true,
+                null, kotRex,confortableCar,5000.1,100000.1);
+
+
+        Human Stefan= new Human("Stefan","Spalina", true, null,null,
+                null,5000 , 25000);
+
+
+        confortableCar.sell(Grzegorz, Stefan, 25000);
 
 
 

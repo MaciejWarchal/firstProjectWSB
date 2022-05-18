@@ -5,20 +5,20 @@ public class FarmAnimal extends Animal implements Edible {
         super(spacies, name, weight, age, isALive);
     }
 
-
-    public void feed(){
+    @Override
+    public void feed() {
         this.weight+=1;
+        System.out.println("nakarmiono");
+
+    }
+    @Override
+    public void feed(double foodWeight){
+        this.weight+=foodWeight;
         System.out.println("thx for feeding");
     }
 
 
 
-    @Override
-    public void feed(int food, double weight) {
-        this.weight+=food;
-        System.out.println("waga zwierzęcia wzrosła");
-
-    }
 
     public String toString(){
         if (this.weight>0){
@@ -30,7 +30,7 @@ public class FarmAnimal extends Animal implements Edible {
 
     @Override
     public void beEaten() {
-        this.weight-=1;
-        System.out.println("Smacznego");
+        this.isALive= false;
+        System.out.println("zwierze zjedzono");
     }
 }

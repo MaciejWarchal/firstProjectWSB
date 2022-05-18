@@ -1,10 +1,10 @@
 package creatures;
 
 import device.Car;
-
 import java.time.LocalDateTime;
 
-public abstract class Animal implements Feedable, salleable {
+
+public abstract class Animal implements salleable,Feedable {
 
     final protected String spacies;
     final protected String name;
@@ -27,89 +27,35 @@ public abstract class Animal implements Feedable, salleable {
         }
 
         public abstract void feed();
-        void takeAWalk(){
+
+    public void sell(creatures.Human saller, creatures.Human buyer, double price) {
+        if (saller.getPhone().equals(null)){
+            System.out.println("Sprzedający nie posiada zwierzęcia");
+        } else {
+            if (buyer.getCash()<price){
+                System.out.println("kupujący nie ma tyle pieniedzy na zakup");
+            } else {
+                buyer.setCash(buyer.getCash()-price);
+                saller.setCash(saller.getCash()+price);
+                buyer.setPhone(saller.getPhone());
+                System.out.println("Sprzedano zwierze "+saller.getPhone().toString());
+            }
+        }
+    }
+
+
+    void takeAWalk(){
         if (this.weight<=0){
             System.out.println("this animal is dead");
         } else {
             this.weight-=1;
         }
-        }
+    }
 
-    public abstract void feed(int food, double weight);
+
 
     public abstract String toString();
 
-    public static class Human {
-        private final String firstname;
-        private final String lastname;
-        private boolean isALive;
-        private String phone;
-        private Animal pet;
-        private Car car;
-        private double salary;
-        private LocalDateTime salaryInfoTime;
-        private double cash;
-
-        public Human(String firstname, String lastname, boolean isALive, String phone, Animal pet, Car car, double salary,double cash) {
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.isALive = isALive;
-            this.phone = phone;
-            this.pet = pet;
-            this.car = car;
-            this.salary = salary;
-            this.salaryInfoTime= LocalDateTime.now();
-            this.cash=cash;
-        }
-
-        public double getSalary() {
-            System.out.println(salaryInfoTime);
-            return salary;
-        }
-
-        public Car getCar(){
-            return this.car;
-        }
-
-        public void setCar(Car car){
-            if (this.salary>car.getCarValue()){
-                System.out.println("udalo sie kupic za gotówke");
-                this.car=car;
-            }
-            else if (this.salary>1/12*car.getCarValue()){
-                System.out.println("auto kupisz za kredyt");
-                this.car=car;
-            } else {
-                System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-            }
-
-        }
-
-        public void setSalary(double newSalary){
-            if (newSalary<=0){
-                System.out.println("nie mozna przypisac zerowej zaplaty");
-            }else {
-                System.out.println("dane zostały wysłane do systemu księgowego");
-                System.out.println("mozliwosc odebrania aneksu do umowy od pani Hani z kadr");
-                System.out.println("ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
-                this.salary=newSalary;
-                this.salaryInfoTime= LocalDateTime.now();
-            }
-        }
 
 
-        @Override
-        public String toString() {
-            return "creatures.Animal.Human{" +
-                    "firstname='" + firstname + '\'' +
-                    ", lastname='" + lastname + '\'' +
-                    ", isALive=" + isALive +
-                    ", phone='" + phone + '\'' +
-                    ", pet=" + pet +
-                    ", car=" + car +
-                    ", salary=" + salary +
-                    ", salaryGetInfoTime=" + salaryInfoTime +
-                    '}';
-        }
-    }
 }

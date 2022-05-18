@@ -1,7 +1,5 @@
 package creatures;
 
-import creatures.Animal;
-
 public class Pet extends Animal {
 
     public Pet(String name,boolean isALive){
@@ -12,15 +10,17 @@ public class Pet extends Animal {
         super(spacies, name, weight, age, isALive);
     }
 
-   public void feed(){
+    public void feed(){
         this.weight+=1;
         System.out.println("thx for feeding");
     }
 
     @Override
-    public void feed(String food, double weight) {
-
+    public void feed(double foodWeight) {
+        this.weight+=foodWeight;
+        System.out.println("Nakarmono zwirze domowe");
     }
+
 
     public String toString(){
         if (this.weight>0){
