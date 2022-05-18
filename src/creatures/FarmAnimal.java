@@ -15,6 +15,7 @@ public class FarmAnimal extends Animal implements Edible {
     public void feed(double foodWeight){
         this.weight+=foodWeight;
         System.out.println("thx for feeding");
+        System.out.println("Now weight of animali is "+this.weight);
     }
 
 

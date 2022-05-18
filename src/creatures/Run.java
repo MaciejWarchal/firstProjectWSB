@@ -20,8 +20,9 @@ public class Run {
         Human Stefan= new Human("Stefan","Spalina", true, null,null,
                 null,5000 , 25000);
 
-
-        confortableCar.sell(Grzegorz, Stefan, 25000);
+        FarmAnimal cow= new FarmAnimal("cow", null,400, 2, true);
+        cow.feed(10);
+        cow.beEaten();
 
 
 
