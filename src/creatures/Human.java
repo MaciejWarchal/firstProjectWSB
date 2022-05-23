@@ -6,14 +6,14 @@ public class Human {
     private final String firstname;
     private final String lastname;
     private boolean isALive;
-    private String phone;
+    private Phone phone;
     private Animal pet;
     private Car car;
     private double salary;
     private LocalDateTime salaryInfoTime;
     private double cash;
 
-    public Human(String firstname, String lastname, boolean isALive, String phone, Animal pet,
+    public Human(String firstname, String lastname, boolean isALive, Phone phone, Animal pet,
                  Car car, double salary, double cash) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -39,11 +39,11 @@ public class Human {
         return pet;
     }
 
-    public String getPhone() {
+    public Phone getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(Phone phone) {
         this.phone = phone;
     }
 
